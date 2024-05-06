@@ -53,25 +53,31 @@ button {
 }
 
 .container {
-  max-width: 1128px;
+  width: 1158px;
+  padding: 0 15px;
   margin: 0 auto;
+}
+
+.section {
+  padding-top: 120px;
+  padding-bottom: 120px;
 }
 
 .title {
   font-size: 36px;
   font-weight: 700;
   line-height: calc(40 / 36);
-  margin: 0 auto 72px;
-  width: fit-content;
+  margin-bottom: 72px;
+  text-align: center;
 }
 
 .header {
+  padding: 24px 0;
   border-bottom: 1px solid #e7e9fc;
 }
 
 .header .container {
   display: flex;
-  padding: 24px 0;
   align-items: center;
   justify-content: space-between;
 }
@@ -87,6 +93,7 @@ button {
   line-height: calc(21 / 18);
   margin-right: 76px;
   display: block;
+  text-transform: uppercase;
 }
 
 .logo-accent {
@@ -155,7 +162,7 @@ button {
 }
 
 .hero {
-  width: 1440px;
+  max-width: 1440px;
   margin: 0 auto;
   background-color: var(--main-text-color);
   background-image: linear-gradient(
@@ -166,7 +173,6 @@ button {
   background-repeat: no-repeat;
   background-size: cover;
   padding: 188px 0;
-  margin-bottom: 120px;
 }
 
 .hero-title {
@@ -174,9 +180,9 @@ button {
   text-align: center;
   font-size: 56px;
   line-height: calc(60 / 56);
-  margin: 0 auto;
-  margin-bottom: 48px;
   max-width: 496px;
+  max-width: 496px;
+  margin: 0 auto 48px;
 }
 
 .hero-button {
@@ -199,10 +205,6 @@ button {
   background-color: var(--main-active-color);
 }
 
-.advantages {
-  margin-bottom: 120px;
-}
-
 .advantages-title {
   display: none;
 }
@@ -221,13 +223,15 @@ button {
   padding: 24px 0;
   margin-bottom: 8px;
   border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .advantages-list svg {
   width: 64px;
   height: 64px;
   display: block;
-  margin: 0 auto;
 }
 
 .advantages-list h3 {
@@ -244,12 +248,12 @@ button {
 }
 
 .job {
-  margin-bottom: 120px;
+  padding-top: 0;
 }
 
 .job-list {
   display: flex;
-  justify-content: space-between;
+  column-gap: 24px;
 }
 
 .job-list li {
@@ -264,8 +268,6 @@ button {
 
 .team {
   background-color: var(--secondary-bg-color);
-  padding: 120px 0;
-  margin-bottom: 120px;
 }
 
 .team-list {
@@ -279,7 +281,7 @@ button {
 }
 
 .team-list div {
-  padding: 32px 16px;
+  padding: 32px 0;
 }
 
 .team-list img {
@@ -293,6 +295,7 @@ button {
   font-weight: 500;
   line-height: calc(24 / 20);
   text-align: center;
+  margin-bottom: 8px;
 }
 
 .team-list p {
@@ -307,20 +310,14 @@ button {
 .socials {
   display: flex;
   width: 100%;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  column-gap: 24px;
 }
 
 .socials li {
-  width: calc((100% - 24px * 3) / 4);
-  aspect-ratio: 1 / 1;
-  background-color: var(--accent-color);
-  border-radius: 50%;
-  transition: background-color 250ms var(--timing-fn);
-}
-
-.socials li:hover,
-.socials li:focus {
-  background-color: var(--socials-active-color);
+  width: 40px;
+  height: 40px;
 }
 
 .socials a {
@@ -329,15 +326,19 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  transition: background-color 250ms var(--timing-fn);
+}
+
+.socials a:hover,
+.socials a:focus {
+  background-color: var(--main-active-color);
 }
 
 .socials svg {
   width: 16px;
   height: 16px;
-}
-
-.customers {
-  margin-bottom: 120px;
 }
 
 .customers ul {
@@ -346,13 +347,7 @@ button {
 }
 
 .customers li {
-  width: calc((100% - 24px * 5) / 6);
-  border: 1px solid #8e8f99;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 4px;
-  padding: 16px 0;
+  width: 168px;
 }
 
 .customers svg {
@@ -360,9 +355,30 @@ button {
   height: 56px;
 }
 
+.customers a {
+  border: 1px solid #8e8f99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  padding: 16px 0;
+  color: #8e8f99;
+  transition: border-color 250ms var(--timing-fn), color 250ms var(--timing-fn);
+}
+
+.customers a:hover,
+.customers a:focus {
+  border-color: var(--main-active-color);
+  color: var(--main-active-color);
+}
+
 .footer {
   background-color: var(--main-text-color);
-  padding: 100px 156px;
+  padding: 100px 0;
+  display: flex;
+}
+
+.footer .container {
   display: flex;
 }
 
@@ -395,22 +411,16 @@ button {
 
 .footer-socials ul {
   display: flex;
+  column-gap: 16px;
 }
 
 .footer-socials li {
   width: 40px;
   height: 40px;
-  background-color: var(--accent-color);
-  border-radius: 50%;
-  transition: background-color 250ms var(--timing-fn);
 }
 
-.footer-socials li:not(:last-child) {
-  margin-right: 16px;
-}
-
-.footer-socials li:hover,
-.footer-socials li:focus {
+.footer-socials a:hover,
+.footer-socials a:focus {
   background-color: var(--socials-active-color);
 }
 
@@ -420,6 +430,9 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  transition: background-color 250ms var(--timing-fn);
 }
 
 .footer-socials svg {
@@ -435,8 +448,8 @@ button {
 
 .filters {
   display: flex;
-  width: fit-content;
-  margin: 0 auto 72px;
+  justify-content: center;
+  margin-bottom: 72px;
 }
 
 .filters li:not(:last-child) {
@@ -536,8 +549,8 @@ button {
   transition: transform 250ms var(--timing-fn);
 }
 
-.items li:hover .overlay-container,
-.items li:focus .overlay-container {
+.items a:hover .overlay-container,
+.items a:focus .overlay-container {
   transform: translateY(0);
 }
 
